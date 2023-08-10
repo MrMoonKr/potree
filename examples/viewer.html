@@ -58,7 +58,7 @@
 		});
 		
 		// Load and add point cloud to scene
-		Potree.loadPointCloud("../pointclouds/vol_total/cloud.js", "sigeom.sa", e => {
+		Potree.loadPointCloud("https://s3.amazonaws.com/lidarusa.project.potree/3438d8aa-cfa6-4ab4-8607-78b8ea48b200-Fenstermaker_Cameron/cloud.js", "디캐릭sigeom.sa", e => {
 			let scene = viewer.scene;
 			let pointcloud = e.pointcloud;
 			
