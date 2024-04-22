@@ -1,8 +1,20 @@
 
 /**
+ * @typedef {Object} PointAttributeType
+ * @property {number} ordinal
+ * @property {string} name
+ * @property {number} size
+ */
+
+/**
+ * @typedef {Object.<string, PointAttributeType>} PointAttributeTypes
+ */
+
+
+/**
  * Some types of possible point attribute data formats
  *
- * @class
+ * @type {PointAttributeTypes}
  */
 const PointAttributeTypes = {
 	DATA_TYPE_DOUBLE: {ordinal: 0, name: "double", size: 8},
@@ -25,9 +37,17 @@ for (let obj in PointAttributeTypes) {
 
 export {PointAttributeTypes};
 
-
+/**
+ * 정점속성. 위치, 색상, ...
+ */
 class PointAttribute{
 	
+	/**
+	 * 
+	 * @param {string} name 
+	 * @param {PointAttributeType} type 
+	 * @param {number} numElements 
+	 */
 	constructor(name, type, numElements){
 		this.name = name;
 		this.type = type;
@@ -88,12 +108,28 @@ PointAttribute.GPS_TIME = new PointAttribute(
 
 export {PointAttribute};
 
+/**
+ * 정점속성 모음집. 하나의 정점을 구성하는 데이터를 전부 표현.
+ */
 export class PointAttributes{
 
 	constructor(pointAttributes){
+
+		/**
+		 * @type {PointAttribute[]} 정점속성 집합
+		 */
 		this.attributes = [];
+		/**
+		 * @type {number} 전체 바이트 크기
+		 */
 		this.byteSize = 0;
+		/**
+		 * @type {number} 구성하는 정점속성의 수
+		 */
 		this.size = 0;
+		/**
+		 * 
+		 */
 		this.vectors = [];
 
 		if (pointAttributes != null) {
@@ -107,7 +143,10 @@ export class PointAttributes{
 		}
 	}
 
-
+	/**
+	 * 
+	 * @param {PointAttribute} pointAttribute 
+	 */
 	add(pointAttribute){
 		this.attributes.push(pointAttribute);
 		this.byteSize += pointAttribute.byteSize;
@@ -118,6 +157,10 @@ export class PointAttributes{
 		this.vectors.push(vector);
 	}
 
+	/**
+	 * 노멀속성을 가지고 있는가의 여부
+	 * @returns {boolean} 
+	 */
 	hasNormals(){
 		for (let name in this.attributes) {
 			let pointAttribute = this.attributes[name];

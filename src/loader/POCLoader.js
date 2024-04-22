@@ -118,6 +118,11 @@ function lasLazAttributes(fMno){
 
 export class POCLoader {
 
+	/**
+	 * XMLHttpRequest 를 이용한 비동기 데이터 로딩
+	 * @param {string} url "../pointclouds/vol_total/cloud.js"
+	 * @param {function(PointCloudOctreeGeometry)} callback 
+	 */
 	static load(url, callback){
 		try {
 			let pco = new PointCloudOctreeGeometry();
