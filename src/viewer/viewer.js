@@ -160,6 +160,9 @@ export class Viewer extends EventDispatcher{
 
 		this.potreeRenderer = null;
 		this.edlRenderer = null;
+		/**
+		 * @type {THREE.WebGLRenderer}
+		 */
 		this.renderer = null;
 		this.pRenderer = null;
 
