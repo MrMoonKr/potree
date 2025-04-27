@@ -464,6 +464,9 @@ We would like to thank our sponsors for their financial contributions that keep 
 			€ 5,000+
 		</th>
 		<td>
+			<a href="https://www.skyebrowse.com/">
+				<img src="docs/sponsors/SkyeBrowse.png" height="60"/> &nbsp;
+			</a>
 			<a href="https://biology.anu.edu.au/research/facilities/australian-plant-phenomics-facility-anu">
 				<img src="docs/sponsors/APPF full logo.png" height="70"/> &nbsp;
 			</a>
